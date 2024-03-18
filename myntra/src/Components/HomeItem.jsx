@@ -27,7 +27,10 @@ const HomeItem = ({ item }) => {
         <span className="discount">(${item.discount_percentage}% OFF)</span>
       </div>
       {elementFound ? (
-        <button className="btn-add-bag btn btn-danger" onClick={handleRemoveBag}>
+        <button
+          className="btn-add-bag btn btn-danger"
+          onClick={handleRemoveBag}
+        >
           Remove from Bag
         </button>
       ) : (

@@ -14,13 +14,13 @@ const FetchItems = () => {
     const controller = new AbortController();
     const signal = controller.signal;
 
-    // dispatch(fetchStatusAction.markFetchingStarted());
+    dispatch(fetchStatusAction.markFetchingStarted());
+
     fetch("http://localhost:8080/items", { signal })
       .then((res) => res.json())
       .then(({ items }) => {
         dispatch(itemsAction.addInitialItems(items));
-        console.log("items", items);
-        // dispatch(fetchStatusAction.markFetchDone());
+        dispatch(fetchStatusAction.markFetchDone());
         dispatch(fetchStatusAction.markFetchingFinished());
         dispatch(itemsAction.addInitialItems(items[0]));
       });

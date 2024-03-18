@@ -13,7 +13,7 @@ function App() {
       <main>
         <FetchItems />
         <div className="items-container">
-          {fetchStatus.currentlyFetching ?<LoadingSpinner /> :  <Outlet />}
+          {fetchStatus.currentlyFetching ? <LoadingSpinner /> : <Outlet />}
         </div>
       </main>
       <Footer />
